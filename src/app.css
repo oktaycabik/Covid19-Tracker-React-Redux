@@ -1,0 +1,12 @@
+.infected{
+    background-color:rgb(176 215 253) !important;
+}
+.deaths{
+    background-color: rgb(244 214 214);
+}
+.recovered{
+    background-color: rgb(221 246 226);
+}
+.active{
+    background-color: rgb(244 225 201);
+}
