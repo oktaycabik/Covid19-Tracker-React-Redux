@@ -11,13 +11,11 @@ import Active from "./compenents/Active";
 function App() {
   const [input, setinput] = useState("world");
   const dispatch = useDispatch();
-  const covid = useSelector((state) => state.covid.covid);
   const country = useSelector((state) => state.covid.country);
   useEffect(() => {
     dispatch(getCovid(input));
     dispatch(getCountry());
   }, [dispatch, input]);
-  console.log(covid);
   return (
     <Container>
       <Row className="mt-3 text-center">
@@ -26,23 +24,23 @@ function App() {
         </Col>
       </Row>
       <Row className="mt-5">
-        <Col>
+        <Col className="col-12 col-md-6 col-sm-6 col-lg-3 mt-2">
           <Infected /> {/* Compenent */}
         </Col>
-        <Col>
+        <Col className="col-12 col-md-6 col-sm-6 col-lg-3  mt-2">
           <Deaths /> {/* Compenent */}
         </Col>
-        <Col>
+        <Col className="col-12 col-md-6 col-sm-6 col-lg-3  mt-2">
           <Recorvered /> {/* Compenent */}
         </Col>
-        <Col>
+        <Col className="col-12 col-md-6 col-sm-6 col-lg-3  mt-2">
           <Active /> {/* Compenent */}
         </Col>
       </Row>
       <Row>
         <Col>
           <select 
-            className="mt-5 " 
+            className="mt-5 rounded class-select" 
             value={input}
             onChange={(e) => setinput(e.target.value)}
             name="country"
